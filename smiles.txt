@@ -1,4 +1,5 @@
 #smiles sammlung bis zu 5 C einfache moleküle
+;alkanes and alcoholes
 C
 CO
 CC
@@ -9,9 +10,28 @@ CCC(O)C
 CCCCO
 CCCCCO
 CCCC(O)C
+;ether
+COC
+COCC
+COC=C
+COC#C
+CO=C(O)
+CCO=C(O)
+;ester
+O=C(OCCC)C
+O=C(OCC)C
+O=C(OC)C
+;säuren
+O=C(O)
+O=C(O)C
+O=C(O)CC
+;peroxides
+OO
+COO
+CC(OO)
+;alkenes
 C=C
 C=CC
-;C=C=C
 C=CCC
 C=C=CC
 C=CC=C
@@ -20,3 +40,64 @@ C=CCCC
 C=C=CCC
 C=CC=CC
 C=CCC=C
+;alkines
+C#C
+C#CC
+CC#CC
+C#CO
+;alkenes w alcohol groups
+C=C(O)C=C
+C=C(O)C=CC
+C=CC(O)=CC
+;alkenes w ketones/aldehydes
+C=CC(=O)CC
+CCC(=O)CC
+CCCC(=O)C
+CCCCC(=O)
+CCCC(=O)
+CCC(=O)
+CC(=O)
+C=O
+;small alkane rings
+C1CC1
+C1CCC1
+C1CCCC1
+C1CCCCC1
+;small rings containing dbs (non-aromatic)
+C1C=C1
+C1CC=C1
+C1=CC=C1
+C1CCC=C1
+C1CC=CC=C1
+C1C=CCC=C1
+C1CCCC=C1
+;aromatic (not directly written that way)
+C1C=CC=C1
+C1=CC=CC=C1
+;several very important things here
+;EO
+C1OC1
+;furan
+C1=COC=C1
+;thiophene
+C1=CSC=C1
+;pyrrole
+C1=CNC=C1
+;pyridine
+C1=CC=NC=C1
+;pyrene
+C1=CC2=C3C(=C1)C=CC4=CC=CC(=C43)C=C2
+; diole
+OCCO
+OCCCO
+OCCCCO
+; diketone
+C(=O)C(=O)
+;disäuren
+OC(=O)C(=O)O
+OC(=O)CC(=O)O
+OC(=O)CCC(=O)O
+OC(=O)C=CC(=O)O
+; 
+C(=O)C(=O)O
+C(=O)OC(=O)O

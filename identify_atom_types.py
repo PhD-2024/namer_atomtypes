@@ -159,7 +159,9 @@ def read_smiles_from_file(file:str="smiles.txt", header:bool=True):
             f.readline()
         for line in f:
             if not line.startswith(";"):
-                all_smiles.append(line.strip())
+                #if it is not an empty line
+                if line.strip()!="":
+                    all_smiles.append(line.strip())
         return all_smiles
 
     
