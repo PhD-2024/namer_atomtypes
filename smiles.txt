@@ -135,3 +135,45 @@ CCC(=O)OCC(COC(=O)C)COCC(C)=O
 CCC(=O)OCC(COC(=O)C)COCCC(C)=O
 CCCC(=O)OCC(COC(=O)C)COCCC(C)=O
 CCC(=O)OCCC(COC(=O)C)COCCC(C)=O
+;
+;sulfonate
+CS(=O)(=O)[O-]
+CCS(=O)(=O)[O-]
+C=CS(=O)(=O)[O-]
+C=CC=CS(=O)(=O)[O-]
+CCCCCC=CC=CS(=O)(=O)[O-]
+CCCCCCCCCS(=O)(=O)[O-]
+
+;phosphate
+CP(=O)([O-])[O-]
+CP(=O)([O-])(C)
+CP(=O)(O)(C)
+CCP(=O)(O)(CC)
+COP(=O)(O)(OC)
+CCOP(=O)(O)(OCC)
+;other things
+O=O
+N#N
+N
+; todo amine
+CN
+C=N
+C#N
+;nitrile (R-C#N)
+CC#N
+; todo amide (R1-[C=O]N and R2 R3)
+; todo lactame and Imide 
+;only important example is Phthalimide
+O=C2c1ccccc1C(=O)N2
+;lactame
+;erstmal auslassen
+
+;todo halogens
+;dichlormethane important solvent!
+C(Cl)Cl
+C(Cl)(Cl)Cl
+C(Cl)(Cl)(Cl)Cl
+C(Cl)(Cl)(Cl)C(Cl)(Cl)(Cl)
+; hfip
+C(C(F)(F)F)(C(F)(F)F)O
+;todo condensed aromatic systems (2 rings at least)
