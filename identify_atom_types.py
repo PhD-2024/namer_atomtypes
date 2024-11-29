@@ -2,7 +2,14 @@ from rdkit import Chem
 import numpy as np
 import re
 
+'''
+This script will be split into a library file and main later
+The functions will therefore be moved. If we want to later reuse stuff, we can also make a class based on struct of atoms and connections, which will get functions as methods
+'''
 def smiles_to_atoms_and_connections(smiles):
+    '''
+    takes a smile and returns a list of atoms and the connection matrix
+    '''
     mol = Chem.MolFromSmiles(smiles)
     mol = Chem.AddHs(mol)
     atoms = [atom.GetSymbol() for atom in mol.GetAtoms()]
@@ -21,8 +28,9 @@ def smiles_to_atoms_and_connections(smiles):
 
 
 def identify_from_connection_matrix_depth_2(atoms, connectivity):
-    #creates a dictionary with the atom types up to depth 2
-    #the dataframe is indexed by the atoms, the value is given to define the connectivity strings
+    '''creates a dictionary (each) up to depth 2
+    These are indexed by the atom indices as given in the atom list, 
+    This by itself is insufficient, as they are not yet ordered'''
     atom_dict_0={}
     atom_dict_1={}
     atom_dict_2={}
@@ -59,7 +67,8 @@ def identify_from_connection_matrix_depth_2(atoms, connectivity):
     return atom_dict_0, atom_dict_1, atom_dict_2
 
 def sort_within_bracket(string_name):
-    '''string to list, then sort list and return as string'''
+    '''This function will convert the simple case of the alphabetical sort
+    The ide is: string to list, then sort list and return as string'''
     unsorted=list(string_name)
     #check that the string is neither empty and does not contain chars, that are not letters
     if len(unsorted)==0:
@@ -74,15 +83,17 @@ def sort_within_bracket(string_name):
 
 
 def sort_by_name_and_length(collected):
-    '''sorts the collected list by the atom name and the length of the inner string'''
+    '''This is used as a self-defined sort key, to make the depth 2 unambigous.
+    It sorts the collected list by the atom name and the length of the inner string'''
     return sorted(collected, key=lambda x: (x[0], x[1]))
 
 def find_parentheses_substrings(string):
+    '''finds all substrings in parentheses'''
     pattern = re.compile(r'\(.*?\)')
     return pattern.findall(string)
 
 def sort_in_brackets(string_name):
-    '''splits string into its bracket contributions
+    '''Sorts the string into its bracket contributions
     case 1 is dictionary after one iteration, case 2 
     is dictionary after two iterations'''
     #case 1
@@ -140,26 +151,21 @@ def sort_in_brackets(string_name):
                     final_string=B+"["+modified_outer+"]"
                     return final_string
 
-
-#### hier main
-def read_smiles_from_file(file="smiles.txt", header=True):
+def read_smiles_from_file(file:str="smiles.txt", header:bool=True):
     '''reads smiles from file, returns list of smiles'''
     with open(file, "r") as f:
         if header:
             f.readline()
         return [line.strip() for line in f]
+    
+
 all_smiles=read_smiles_from_file("smiles.txt")
 all_types=[]
 
 #test with depth 2
 for smiles in all_smiles:
-#smiles = "CCO"
+
         atoms, connections = smiles_to_atoms_and_connections(smiles)
-        #print("Atoms:", atoms)
-        #print("Connections:", connections)
-
-
-
         a0,a1,a2=identify_from_connection_matrix_depth_2(atoms, connections)
         a2_0_sorted=   [ sort_in_brackets(a2[i]) for i in range(len(a2))]
         #print(a2_0_sorted)
