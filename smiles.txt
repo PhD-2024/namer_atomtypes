@@ -1,11 +1,15 @@
 #smiles sammlung bis zu 5 C einfache moleküle
-;alkanes and alcoholes
+;alkanes and alcohol(at)es
 C
 CO
+C[O-]
 CC
 CCO
+CC[O-]
+CCC[O-]
 CCCO
 CC(O)C
+CC([O-])C
 CCC(O)C
 CCCCO
 CCCCCO
@@ -25,6 +29,10 @@ O=C(OC)C
 O=C(O)
 O=C(O)C
 O=C(O)CC
+;deprot
+O=C([O-])
+O=C([O-])C
+O=C([O-])CC
 ;peroxides
 OO
 COO
@@ -98,6 +106,16 @@ OC(=O)C(=O)O
 OC(=O)CC(=O)O
 OC(=O)CCC(=O)O
 OC(=O)C=CC(=O)O
+OC(=O)C(=O)[O-]
+OC(=O)CC(=O)[O-]
+OC(=O)CCC(=O)[O-]
+OC(=O)C=CC(=O)[O-]
+[O-]C(=O)C(=O)[O-]
+[O-]C(=O)CC(=O)[O-]
+[O-]C(=O)CCC(=O)[O-]
+[O-]C(=O)C=CC(=O)[O-]
 ; 
 C(=O)C(=O)O
 C(=O)OC(=O)O
+C(=O)CC(=O)O
+C(=O)OCC(=O)O
