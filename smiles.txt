@@ -15,8 +15,8 @@ COC
 COCC
 COC=C
 COC#C
-CO=C(O)
-CCO=C(O)
+COCO
+CCOC(O)
 ;ester
 O=C(OCCC)C
 O=C(OCC)C
