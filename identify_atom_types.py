@@ -153,23 +153,38 @@ def sort_in_brackets(string_name):
 
 def read_smiles_from_file(file:str="smiles.txt", header:bool=True):
     '''reads smiles from file, returns list of smiles'''
+    all_smiles=[]
     with open(file, "r") as f:
         if header:
             f.readline()
-        return [line.strip() for line in f]
+        for line in f:
+            if not line.startswith(";"):
+                all_smiles.append(line.strip())
+        return all_smiles
+
     
+def main():
+    all_smiles=read_smiles_from_file("smiles.txt")
+    all_types=[]
 
-all_smiles=read_smiles_from_file("smiles.txt")
-all_types=[]
-
-#test with depth 2
-for smiles in all_smiles:
+    #test with depth 2
+    for smiles in all_smiles:
+        print(smiles)
 
         atoms, connections = smiles_to_atoms_and_connections(smiles)
         a0,a1,a2=identify_from_connection_matrix_depth_2(atoms, connections)
+        #das hier sind die sortierten atomtypen für den graph
         a2_0_sorted=   [ sort_in_brackets(a2[i]) for i in range(len(a2))]
+        
         #print(a2_0_sorted)
-
+        #all types sind NICHT sortiert
         all_types.extend(a2_0_sorted)
-print(set(all_types))
-print("Number of different atomtypes identified:", len(set(all_types)))
+    print(set(all_types))
+    print("Number of different atomtypes identified:", len(set(all_types)))
+    return set(all_types)
+
+
+
+
+if __name__ == "__main__":
+        main()
