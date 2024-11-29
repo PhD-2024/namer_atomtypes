@@ -119,3 +119,19 @@ C(=O)C(=O)O
 C(=O)OC(=O)O
 C(=O)CC(=O)O
 C(=O)OCC(=O)O
+;di-tetraethyleneglycole
+OCCOCCO
+OCCOCCOCCO
+OCCOCCOCCOCCO
+
+;glycerin
+C(C(CO)O)O
+;triacetin as the simplest triester of glycerol
+CC(=O)OC(COC(=O)C)COC(C)=O
+;longer (into the direction of fats)
+CCC(=O)OCC(COC(=O)C)COC(C)=O
+CCC(=O)OC(COC(=O)C)COCC(C)=O
+CCC(=O)OCC(COC(=O)C)COCC(C)=O
+CCC(=O)OCC(COC(=O)C)COCCC(C)=O
+CCCC(=O)OCC(COC(=O)C)COCCC(C)=O
+CCC(=O)OCCC(COC(=O)C)COCCC(C)=O
