@@ -177,3 +177,69 @@ C(Cl)(Cl)(Cl)C(Cl)(Cl)(Cl)
 ; hfip
 C(C(F)(F)F)(C(F)(F)F)O
 ;todo condensed aromatic systems (2 rings at least)
+
+
+
+; below are the gaff paper smiles , just comment them out if not desired. they  are also in the smiles_gaff file
+;smiles der zu überprüfenden typen aus dem GAFF paper , 
+;war für damals minimal, bei uns kann es nicht minimal sein, da wir 2 weiter laufen müssen
+;conversion with decimer ai doesnt work as the indices are wrongly taken into account
+; structures can be checked on https://www.cheminfo.org/Chemistry/Cheminformatics/Smiles/index.html
+; first row
+CCCF
+ClC=CBr
+COc1ccc(O)cc1
+ICC(=O)
+; second row
+CC(=O)CS
+CC(=S)O
+CSCC#C
+CSSC
+; third row
+CS(=O)C
+CS(=O)(=O)NC
+CC(=O)N
+NCC=NO
+; 4th row
+C[N+]
+CN1C=CC=C1
+C1=CC=CC=C1N
+CP=CC[N+](=O)[O-]
+; 5th row
+
+CP
+CP(=O)C
+CP(=O)(O)OC
+; 6th row
+C=CC=C
+C=CN=C
+C=CC=CC=CC=C
+C#CC=C
+; 7th row
+C=CP=C
+O1C=CC=C1
+S1C=CC=C1
+O1C=PC=C1
+C1(=O)C=CNC=C1
+; 8th row : todo the N+ structure is not correct
+c2ccc(c1ccccc1)cc2
+;c2ccc([n+]1ccccc1)cc2
+c3ccc(c1ccccc1c2ccccc2)cc3
+c4ccc(c1ccccc1c3cccc(c2ccco2)c3)cc4
+; 9th row
+c2ccc1ccccc1c2
+c3ccc2cc1ccccc1cc2c3
+CS(=C)C
+CS(=O)C=C
+; 10th row (teilweise sehr artifiziell um enventualitäten der atomtypen abzudecken)
+O=S(=O)(C1C=CC1)C2CC2
+C=CS(=O)(=O)C1C=C1
+;ladung alalog zu oben incorrect todo
+;C[P+](O)=S
+;C=C[P+](C)=S
+; 11th row
+CP(=N)(OC)(OC)
+C=NP(=O)(OC)OC
+COP(=O)(OC)P(=O)(OC)OC
+;CO[P+](O)(OC)[P+](O)(OC)OC
+;12 th row ignored as it cannot be correctly be represented by gaff either
