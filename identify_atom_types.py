@@ -166,6 +166,7 @@ def read_smiles_from_file(file:str="smiles.txt", header:bool=True):
 
     
 def main():
+    
     all_smiles=read_smiles_from_file("smiles.txt")
     all_types=[]
 
@@ -183,6 +184,7 @@ def main():
         all_types.extend(a2_0_sorted)
     print(set(all_types))
     print("Number of different atomtypes identified:", len(set(all_types)))
+    print("from a total of", len(all_smiles), "molecules")  
     return set(all_types)
 
 
